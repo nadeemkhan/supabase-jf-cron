@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Call Supabase Edge Function
         run: |
-          curl -X POST https://bjxtefvuzgvmswafrtkz.supabase.co/functions/v1/import-cron \
+          curl -X POST https://bjxtefvuzgvmswafrtkz.supabase.co/functions/v1/cron-import \
             -H "Content-Type: application/json"
