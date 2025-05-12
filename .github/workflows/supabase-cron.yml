@@ -1,0 +1,15 @@
+name: Supabase Cron Trigger
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'  # every 2 minutes (UTC time)
+  workflow_dispatch:
+
+jobs:
+  call-edge-function:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Supabase Edge Function
+        run: |
+          curl -X POST https://bjxtefvuzgvmswafrtkz.supabase.co/functions/v1/import-cron \
+            -H "Content-Type: application/json"
