@@ -1,16 +1,16 @@
-name: Supabase Cron Trigger
+# name: Supabase Cron Trigger
 
-on:
-  schedule:
-    - cron: "*/2 * * * *"  # every 2 minutes
-  workflow_dispatch:
+# on:
+#   schedule:
+#     - cron: "*/2 * * * *"  # every 2 minutes
+#   workflow_dispatch:
 
-jobs:
-  call-edge-function:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Call Supabase Edge Function with auth
-        run: |
-          curl -X POST https://bjxtefvuzgvmswafrtkz.supabase.co/functions/v1/cron-import \
-            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
-            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}"
+# jobs:
+#   call-edge-function:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Call Supabase Edge Function with auth
+#         run: |
+#           curl -X POST https://bjxtefvuzgvmswafrtkz.supabase.co/functions/v1/cron-import \
+#             -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+#             -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}"
