@@ -1,0 +1,16 @@
+ name: Supabase Cron Trigger
+
+ on:
+   schedule:
+     - cron: "0 0 * * *"
+   workflow_dispatch:
+
+ jobs:
+   call-edge-function:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Call Supabase Edge Function with auth
+         run: |
+           curl -X POST https://bjxtefvuzgvmswafrtkz.supabase.co/functions/v1/cron-import \
+             -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+             -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}"
